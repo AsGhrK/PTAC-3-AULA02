@@ -1,3 +1,7 @@
+import Menu from "./Componentes/Menu";
+import Registro from "./registro/page";
+import RodaPe from "./Componentes/RodaPe";
+
 
 export const metadata = {
   title: 'Create Next App',
@@ -7,7 +11,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <body>{children}</body>
-    </html>
+      <body>
+        <Menu/>
+        <hr/>
+    {children}
+    <hr/>
+      <RodaPe/>
+      </body>
+       </html>
   )
 }
