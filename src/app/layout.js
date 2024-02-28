@@ -1,7 +1,8 @@
 import Menu from "./Componentes/Menu";
 import Registro from "./registro/page";
 import RodaPe from "./Componentes/RodaPe";
-
+import Local from "./localizacao/page";
+import Map from "./Componentes/Map";
 
 export const metadata = {
   title: 'Create Next App',
