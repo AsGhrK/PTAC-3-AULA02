@@ -4,7 +4,7 @@ export default function Local() {
   return (
     <header>
       <Map />
-
+<br/>
       <Image
         width={100}
         height={100}

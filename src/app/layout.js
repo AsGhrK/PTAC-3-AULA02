@@ -3,6 +3,8 @@ import Registro from "./registro/page";
 import RodaPe from "./Componentes/RodaPe";
 import Local from "./localizacao/page";
 import Map from "./Componentes/Map";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from "./Componentes/menu.module.css";
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,12 +15,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <body>
-        <Menu/>
-        <hr/>
-    {children}
-    <hr/>
-      <RodaPe/>
+        <Menu />
+        <hr />
+        <div className={styles.content}>{children}</div>
+        <hr style={{marginTop: 620}} />
+<RodaPe/>
       </body>
-       </html>
+
+
+    </html>
   )
 }

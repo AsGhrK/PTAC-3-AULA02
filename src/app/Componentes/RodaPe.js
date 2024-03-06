@@ -2,10 +2,14 @@ import { images } from "../../../next.config";
 import styles from "./menu.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default function RodaPe() {
   return (
-    <header lang="pt-br" className={styles.RodaPe}>
-      <Link href={"https://" + images.domains[1]}>
+<header lang="pt-br">
+<nav class="navbar navbar-expand-lg bg-body-tertiary position-absolute bottom-0 container-fluid " data-bs-theme="dark" >
+  <div class="container-fluid">
+    <a class="navbar-brand">
+    <Link href={"https://" + images.domains[1]}>
         <Image
           width={100}
           height={100}
@@ -14,13 +18,19 @@ export default function RodaPe() {
           }
         />
       </Link>
-      <h1>Roda pé</h1>
-      <nav>
-        <ul>
-          <li>Contato: macerlino@gmail.com</li>
-          <li>Local: IFMS - CAMPUS NOVA ANDRADINA</li>
-        </ul>
-      </nav>
-    </header>
+    </a>
+    <h1 class="navbar-brand" >RodaPe</h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <p  className="nav-link active">Contato: macerlino@gmail.com</p>
+        <p  className="nav-link active">Local: IFMS - CAMPUS NOVA ANDRADINA</p>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>
   );
 }
