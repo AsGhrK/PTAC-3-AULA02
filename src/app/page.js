@@ -1,6 +1,8 @@
 
 export default async function Home() {
 
+    const respota = await fetch("http://localhost:3000/api")
+
   return (
     <div>
     <head>
