@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function RodaPe() {
   return (
 <header lang="pt-br">
-<nav class="navbar navbar-expand-lg bg-body-tertiary position-absolute bottom-0 container-fluid " data-bs-theme="dark" >
+<nav class="navbar navbar-expand-lg bg-body-tertiary container-fluid " data-bs-theme="dark" >
   <div class="container-fluid">
     <a class="navbar-brand">
     <Link href={"https://" + images.domains[1]}>

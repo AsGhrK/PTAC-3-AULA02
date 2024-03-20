@@ -11,9 +11,8 @@ export default async function Home() {
 
     return (
         <div>
-            <head>
-                <title>Página Inicial</title>
-                <style>{`
+        <style>
+            {`
                     body {
                         font-family: Arial, sans-serif;
                     }
@@ -40,6 +39,8 @@ export default async function Home() {
                         margin: 0;
                     }
                 `}</style>
+            <head>
+                <title>Página Inicial</title>
             </head>
 
             <div className="header">
