@@ -11,8 +11,8 @@ export default async function Home() {
 
     return (
         <div>
-        <style>
-            {`
+            <style>
+                {`
                     body {
                         font-family: Arial, sans-serif;
                     }
@@ -24,12 +24,16 @@ export default async function Home() {
                     .content {
                         margin: 20px;
                     }
-                    .campus-card {
+                    .campus-container {
                         display: flex;
-                        align-items: center;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                    }
+                    .campus-card {
+                        flex: 0 0 calc(33.33% - 20px);
                         border: 1px solid #ddd;
                         padding: 10px;
-                        margin-bottom: 10px;
+                        margin-bottom: 20px;
                         border-radius: 5px;
                     }
                     .campus-card img {
@@ -38,7 +42,8 @@ export default async function Home() {
                     .campus-card p {
                         margin: 0;
                     }
-                `}</style>
+                `}
+            </style>
             <head>
                 <title>Página Inicial</title>
             </head>
@@ -51,12 +56,14 @@ export default async function Home() {
                 <p>Esta é uma página inicial simples. Você pode adicionar mais conteúdo conforme necessário.</p>
             </div>
 
-            {campus.map((campi) => (
-                <div className="campus-card" key={campi.id}>
-                    <Image width={100} height={100} src={campi.imagem_url} alt={campi.nome_campi} />
-                    <p>{campi.nome_campi}</p>
-                </div>
-            ))}
+            <div className="campus-container">
+                {campus.map((campi) => (
+                    <div className="campus-card" key={campi.id}>
+                        <Image width={100} height={100} src={campi.imagem_url} alt={campi.nome_campi} />
+                        <p>{campi.nome_campi}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
