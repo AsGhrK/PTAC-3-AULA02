@@ -1,18 +1,27 @@
 import Image from "next/image";
 
 export default async function Home() {
+    let campos = []
     const response = await fetch("http://localhost:3000/api", {
         next: {
             revalidate: 1
         }
     });
 
-    const campus = await response.json();
+    campos = await response.json();
+    if (campos[0] == null) {
+        return (
+            <p>bruh</p>
+        )
+    } else {
 
-    return (
-        <div>
-            <style>
-                {`
+
+
+
+        return (
+            <div>
+                <style>
+                    {`
                     body {
                         font-family: Arial, sans-serif;
                     }
@@ -43,27 +52,28 @@ export default async function Home() {
                         margin: 0;
                     }
                 `}
-            </style>
-            <head>
-                <title>Página Inicial</title>
-            </head>
+                </style>
+                <head>
+                    <title>Página Inicial</title>
+                </head>
 
-            <div className="header">
-                <h1>Bem-vindo à nossa página inicial!</h1>
-            </div>
+                <div className="header">
+                    <h1>Bem-vindo à nossa página inicial!</h1>
+                </div>
 
-            <div className="content">
-                <p>Esta é uma página inicial simples. Você pode adicionar mais conteúdo conforme necessário.</p>
-            </div>
+                <div className="content">
+                    <p>Esta é uma página inicial simples. Você pode adicionar mais conteúdo conforme necessário.</p>
+                </div>
 
-            <div className="campus-container">
-                {campus.map((campi) => (
-                    <div className="campus-card" key={campi.id}>
-                        <Image width={100} height={100} src={campi.imagem_url} alt={campi.nome_campi} />
-                        <p>{campi.nome_campi}</p>
-                    </div>
-                ))}
+                <div className="campus-container">
+                    {campos.map((campi) => (
+                        <div className="campus-card" key={campi.id}>
+                            <Image width={100} height={100} src={campi.imagem_url} alt={campi.nome_campi} />
+                            <p>{campi.nome_campi}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
-    );
-};
+        );
+    }
+}
